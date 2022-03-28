@@ -6,11 +6,16 @@ import java.util.Scanner;
 public class Main {
     
     private static Scanner input = new Scanner(System.in);
-    private static int id;
-    private static ArrayList<Rental> vecRental = new ArrayList<Rental>();
-    private static Rental data;
+    private static int id = 1;
+    private static ArrayList<Rental> listRental = new ArrayList<Rental>();
+    private static Rental perental;
         
     public static void main(String[] args) {
+
+        // Data yang dibuat sendiri
+        perental = new Rental(1, "Rausyan", 3, 4);
+        listRental.add(perental);
+
         int menu;
         do {
             System.out.println("\n\n   ===PIXEL RENTAL PS===");
@@ -73,8 +78,8 @@ public class Main {
         System.out.print("Masukkan lama sewa     : ");
         int lamaSewa = input.nextInt();
         
-        data = new Rental(id, nama, jenisPs, lamaSewa);
-        vecRental.add(data);
+        perental = new Rental(id, nama, jenisPs, lamaSewa);
+        listRental.add(perental);
         
         System.out.println("\nBerhasil menambahkan data rental.");
         input.nextLine();
@@ -86,8 +91,9 @@ public class Main {
         System.out.println("================================");
         System.out.println("No  Nama \tJenis  Lama Sewa");
 
-        for (Rental data : vecRental) {
-            System.out.println(data.getId() + "   " + data.getNama() + " \tPs " + data.getJenisPs() + "\t  " + data.getLamaSewa()+ " Jam"
+        for (Rental perental : listRental) {
+            System.out.println(
+                    perental.getId() + "   " + perental.getNama() + " \tPs " + perental.getJenisPs() + "\t  " + perental.getLamaSewa()+ " Jam"
             );
         }
         System.out.println();
@@ -102,8 +108,8 @@ public class Main {
         int nomor = input.nextInt(); input.nextLine();
         boolean ubah = false;
         
-        for (Rental data : vecRental) {
-            if(data.getId() == nomor) {
+        for (Rental perental : listRental) {
+            if(perental.getId() == nomor) {
                 System.out.print("Masukkan nama baru   : ");
                 String nama = input.nextLine();
                 System.out.print("Masukkan jenis baru  : Ps ");
@@ -111,9 +117,9 @@ public class Main {
                 System.out.print("Masukkan jam baru    : ");
                 int lamaSewa = input.nextInt(); input.nextLine();
                 
-                data.setNama(nama);
-                data.setJenisPs(jenisPs);
-                data.setLamaSewa(lamaSewa);
+                perental.setNama(nama);
+                perental.setJenisPs(jenisPs);
+                perental.setLamaSewa(lamaSewa);
 
                 ubah = true;
                 break;
@@ -138,9 +144,9 @@ public class Main {
         int nomor = input.nextInt(); input.nextLine();
         boolean hapus = false;
         
-        for (Rental data : vecRental) {
-            if(data.getId() == nomor) {
-                vecRental.remove(data);
+        for (Rental perental : listRental) {
+            if(perental.getId() == nomor) {
+                listRental.remove(perental);
                 hapus = true;
                 break;
             }

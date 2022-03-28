@@ -1,13 +1,12 @@
 package com.posttest1;
 
 public class Rental {
+    private int id;
     private String nama;
     private int jenisPs;
     private int lamaSewa;
-    private int id;
 
     public Rental(int id, String nama, int jenisPs, int lamaSewa) {
-        super();
         this.id = id;
         this.nama = nama;
         this.jenisPs = jenisPs;
