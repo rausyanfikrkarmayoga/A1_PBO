@@ -315,6 +315,7 @@ public class Main {
                     if(jenisPs == dataPs.getJenisPs() && dataPs.getStatus().equals("Tersedia")) {
                         tagihan = lamaSewa * dataPs.getHarga();
                         dataPs.setStatus("  Disewa");
+                        perental.setUsrIdPs(dataPs.getIdPs());
                         perental.ubahData_perental(nama, umur, alamat, jenisPs, lamaSewa, tagihan);
                         break;
                     }
