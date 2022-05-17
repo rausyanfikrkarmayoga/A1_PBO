@@ -20,7 +20,7 @@ class RentalPs extends Rental {
 
 
     static void maksJenisPs() {
-        System.out.println("\nMaksimal jenis Ps adalah : " + jenisPs);
+        System.out.println("\nMaksimal jenis Ps adalah : " + RentalPs.jenisPs);
     }
 
     @Override
